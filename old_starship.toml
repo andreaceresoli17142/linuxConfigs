@@ -1,0 +1,64 @@
+format = """[📂️ ](blue)$directory$rust$package$git_branch$git_status$status$cmd_duration\n[\\$](bold blue) """
+
+# Replace the "❯" symbol in the prompt with "$"
+#[character]                            # The name of the module we are configuring is "character"
+#success_symbol = "[$](bold blue)"
+
+#[[battery.display]]
+#threshold = 30
+#style = "bold red"
+
+[status]
+style = "bold red"
+symbol = "🔴"
+format = 'ERR:[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
+[cmd_duration]
+min_time = 4_000
+show_milliseconds = false
+disabled = false
+format = "⏰ [$duration](bold yellow) "
+
+[directory]
+truncation_length = 4
+truncation_symbol = "☁️ /"
+style="bold white"
+read_only = " 🔒"
+read_only_style	= "blue"
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[golang]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+symbol = " "
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[package]
+symbol = " "
+format = '\[[$symbol$version]($style)\]'
+
+[php]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[nodejs]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+
